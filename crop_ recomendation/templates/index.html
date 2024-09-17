@@ -4,33 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crop Recommendation</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #34495e;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #34495e;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        h3 {
+            text-align: center;
+            color: #e74c3c;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Crop Recommendation System</h2>
-    <form action="/predict" method="post">
-        <label for="N">Nitrogen (N):</label>
-        <input type="text" name="N" required><br><br>
+    <div class="container">
+        <h2>Crop Recommendation System</h2>
+        <form action="/predict" method="post">
+            <label for="N">Nitrogen (N):</label>
+            <input type="text" name="N" required>
 
-        <label for="P">Phosphorus (P):</label>
-        <input type="text" name="P" required><br><br>
+            <label for="P">Phosphorus (P):</label>
+            <input type="text" name="P" required>
 
-        <label for="K">Potassium (K):</label>
-        <input type="text" name="K" required><br><br>
+            <label for="K">Potassium (K):</label>
+            <input type="text" name="K" required>
 
-        <label for="temperature">Temperature (°C):</label>
-        <input type="text" name="temperature" required><br><br>
+            <label for="temperature">Temperature (°C):</label>
+            <input type="text" name="temperature" required>
 
-        <label for="humidity">Humidity (%):</label>
-        <input type="text" name="humidity" required><br><br>
+            <label for="humidity">Humidity (%):</label>
+            <input type="text" name="humidity" required>
 
-        <label for="pH">pH:</label>
-        <input type="text" name="pH" required><br><br>
+            <label for="pH">pH:</label>
+            <input type="text" name="pH" required>
 
-        <label for="rainfall">Rainfall (mm):</label>
-        <input type="text" name="rainfall" required><br><br>
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="text" name="rainfall" required>
 
-        <input type="submit" value="Predict Crop">
-    </form>
-    <h3>{{ prediction_text }}</h3>
+            <input type="submit" value="Predict Crop">
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
 </body>
 </html>
